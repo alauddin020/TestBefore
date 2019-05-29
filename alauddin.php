@@ -1,3 +1,6 @@
 <?php
-	echo "alauddin";
+	function FunctionName($value)
+	{
+		return $value;
+	}
 ?>
