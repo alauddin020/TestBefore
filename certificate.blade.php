@@ -14,7 +14,7 @@
         $type2 = pathinfo($path2, PATHINFO_EXTENSION);
         $data2 = file_get_contents($path2);
         $base642 = 'data:image/' . $type2 . ';base64,' . base64_encode($data2);
-		/*
+		
         
     	  
 
@@ -23,7 +23,7 @@
         $type3 = pathinfo($path3, PATHINFO_EXTENSION);
         $data3 = file_get_contents($path3);
         $base643 = 'data:image/' . $type3 . ';base64,' . base64_encode($data3);
-        */
+        
     ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -113,12 +113,12 @@ left: 0;
     position:fixed;
     left:435px;
     top:520px;
-    background-image:url(band.png);
+    background-image:url({{$base643}});
     background-size:60px 90px;
     background-repeat:no-repeat;
     z-index: 5;
-                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='band.png',sizingMethod='scale');
-                -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='band.png',sizingMethod='scale')";
+                filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{{$base643}}',sizingMethod='scale');
+                -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{{$base643}}',sizingMethod='scale')";
     
         }
     
