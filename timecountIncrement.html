@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Count</title>
+</head>
+<body>
+<h6  style="text-align: center" ><span id="iTimeShow">Time Remaining </span><br/>
+    <span id='timer' style="font-size:16px;"></span></h6>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var totalminutes=60;//In seconds
+    var c=parseInt(totalminutes);
+    var t;
+    var a =0;
+    var timer = $('#timer');
+    $(document).ready(function () {
+        timedCount();
+    });
+    function timedCount()
+    {
+        var hours = parseInt( a / 3600 ) % 24;
+        // alert(hours);
+        var minutes = parseInt( a / 60 ) % 60;
+        var seconds = a % 60;
+        var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
+        timer.html(result);
+        // console.log(result);
+        if (a ==c)
+        {
+            timer.html("Time End");
+            
+            return false;
+        }
+        a = a+ 1;
+        t = setTimeout(function()
+        {
+            timedCount()
+        },1000);
+        console.log(a);
+    }
+</script>
+</body>
+</html>
