@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^test.medicareerbd.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.test.medicareerbd.com$
+RewriteCond %{REQUEST_URI} !html/
+RewriteRule (.*) /html/$1 [L]
+
+#composer install cpanel
+curl -sS https://getcomposer.org/installer | php
